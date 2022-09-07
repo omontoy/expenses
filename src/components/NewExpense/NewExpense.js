@@ -1,7 +1,7 @@
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
-const NewExpense = ({ onCreatedNewExpense }) => {
+const NewExpense = (props) => {
   
   const newExpenseHandler = newExpenseData => {
     const expenseData = {
@@ -9,7 +9,7 @@ const NewExpense = ({ onCreatedNewExpense }) => {
       ...newExpenseData
     }
 
-    onCreatedNewExpense(expenseData)
+    props.onCreatedNewExpense(expenseData)
   }
 
   return (
