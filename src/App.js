@@ -8,15 +8,13 @@ const App = () => {
   const [ expensesList, setExpensesList ] = useState(expenses)
 
   const createdExpenseHandler = expenseCreated => {
-    const newExpense = {
-      ...expenseCreated
-    }
+    // setExpensesList(prevExpenses => (
+    //   [ expenseCreated, ...prevExpenses ]
+    // ))
 
-    setExpensesList(prevState => ([
-      newExpense,
-      ...prevState
-    ]))
-
+    setExpensesList(prevExpenses => {
+      return [...prevExpenses, expenseCreated]
+    })
   }
 
   return (
